@@ -1,0 +1,83 @@
+.navbar {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+  
+      li {
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: #0070f3;
+        }
+      }
+    }
+  }
+  
+  .title-container {
+    display: flex;
+    /* Arrange logo and h1 in a row */
+    align-items: center;
+    /* Vertically align logo and h1 */
+    margin-bottom: 1rem;
+    /* Add space below the h1 and logo */
+    width: fit-content;
+    /* Adjust width to content */
+    // background-color: #6A45FF;
+    /* Apply background to the container */
+    padding-left: 10%;
+    /* Maintain left padding */
+    box-sizing: border-box;
+    /* Include padding in width */
+  }
+
+  .flower-logo {
+    position: relative;
+    width: 50px;
+    /* Adjust size as needed */
+    height: 50px;
+    /* Adjust size as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    /* Space between logo and text */
+
+    &__center-dot {
+      width: 18%;
+      /* Adjust dot size */
+      height: 18%;
+      /* Adjust dot size */
+      border-radius: 50%;
+      background-color: #6A45FF;
+      /* White center dot */
+      position: absolute;
+    }
+
+    &__petal {
+      position: absolute;
+      width: 60%;
+      /* Adjust petal length */
+      height: 8%;
+      /* Adjust petal thickness */
+      background-color: #6A45FF;
+      /* White petals */
+      transform-origin: center center;
+      border-radius: 2px;
+      /* Slightly rounded edges */
+
+      @for $i from 0 through 8 {
+        &:nth-child(#{$i + 1}) {
+          transform: rotate($i * (360 / 9) + deg);
+        }
+      }
+    }
+  }

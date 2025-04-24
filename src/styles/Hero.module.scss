@@ -1,0 +1,127 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+
+  .text {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    color: #fff;
+    animation: fadeIn 1s ease forwards;
+    padding-right: 10%;
+    width: 100%;
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      width: fit-content;
+      padding-left: 0;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      padding: 0;
+      margin-bottom: 1rem;
+      background-color: #6A45FF;
+      width: 100vw;
+      height: 48px;
+      line-height: 48px;
+      padding-left: 10%;
+      box-sizing: border-box;
+    }
+
+    .flower-logo {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+
+      &__center-dot {
+        width: 18%;
+        height: 18%;
+        border-radius: 50%;
+        background-color: #6A45FF;
+        position: absolute;
+      }
+
+      &__petal {
+        position: absolute;
+        width: 60%;
+        height: 8%;
+        background-color: #6A45FF;
+        transform-origin: center center;
+        border-radius: 2px;
+
+        @for $i from 0 through 8 {
+          &:nth-child(#{$i + 1}) {
+            transform: rotate($i * (360 / 9) + deg);
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+
+    .text {
+      position: static;
+      padding: 2rem 1rem;
+      text-align: center;
+
+      .title-container {
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        height: auto;
+        padding: 1rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 1rem auto;
+      }
+    }
+
+    .flower-logo {
+      margin: 0 auto;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

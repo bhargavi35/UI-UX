@@ -1,0 +1,118 @@
+.footer {
+  background: #000;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.logoBox {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.triangle-top,
+.triangle-bottom,
+.triangle-left,
+.triangle-right {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent; 
+}
+
+// Top green triangle
+.triangle-top {
+  top: 0;
+  left: 0;
+  border-top: 30px solid #8bff54;
+}
+
+// Bottom red triangle
+.triangle-bottom {
+  bottom: 0;
+  left: 0;
+  border-bottom: 30px solid #ff5251;
+}
+
+// Left blue triangle
+.triangle-left {
+  left: 0;
+  top: 0;
+  border-left: 30px solid #6487ff;
+}
+
+// Right yellow triangle
+.triangle-right {
+  right: 0;
+  top: 0;
+  border-right: 30px solid #eafe5f;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #444;
+  margin: 0 auto;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social span {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+.copy {
+  font-size: 0.875rem;
+  color: #ccc;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #1da1f2; 
+    }
+  }
+}
